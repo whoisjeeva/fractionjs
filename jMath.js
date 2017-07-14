@@ -5,7 +5,6 @@ function jMath(str_num) {
     }
   }
 
-
   /*
   Following method handles the `algebraic fractions` which allows to do integer calculation on floating points
   */
@@ -52,7 +51,20 @@ function jMath(str_num) {
     this.value = str_num;
   };
 
-  this.abs = function() { this.value = Math.abs(str_num); }
+  this.abs = function() { this.value = Math.abs(this.value); }
+  this.acos = function() { this.value = Math.acos(this.value); }
+  this.asin = function() { this.value = Math.asin(this.value); }
+  this.atan = function() { this.value = Math.atan(this.value); }
+  this.atan2 = function(num2) { this.value = Math.atan2(this.value, num2); }
+  this.ceil = function() { this.value = Math.ceil(this.value); }
+  this.cos = function() { this.value = Math.cos(this.value); }
+  this.exp = function() { this.value = Math.exp(this.value); }
+  this.floor = function() { this.value = Math.floor(this.value); }
+  this.log = function() { this.value = Math.log(this.value); }
+  this.pow = function(exponent) { this.value = Math.pow(this.value, exponent); }
+  this.sin = function() { this.value = Math.sin(this.value); }
+  this.sqrt = function() { this.value = Math.sqrt(this.value); }
+  this.tan = function() { this.value = Math.tan(this.value); }
   
   this.add = function (str_num2) {
     throwError(str_num2, "string");
@@ -110,4 +122,25 @@ function jMath(str_num) {
   };
 
   this.__init__();
+}
+
+
+jMath.E = "2.718281828459045";
+jMath.LN2 = "0.6931471805599453";
+jMath.LN10 = "2.302585092994046";
+jMath.LOG2E = "1.4426950408889634";
+jMath.LOG10E = "0.4342944819032518";
+jMath.PI = "3.141592653589793";
+jMath.SQRT1_2 = "0.7071067811865476";
+jMath.SQRT2 = "1.4142135623730951";
+
+jMath.random = function(max, min) {
+  if (min === undefined && max === undefined) {
+    return Math.random();
+  } else if (min === undefined) {
+    return Math.floor(Math.random() * (max + 1)); // 0 - 5
+  } else if (min !== undefined && max !== undefined) {
+    return Math.floor(Math.random() * (min - max + 1) + max);
+  }
+  return null;
 }
