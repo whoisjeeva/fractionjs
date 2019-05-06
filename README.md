@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/anyms/MathJS.svg?branch=master)](https://travis-ci.org/anyms/MathJS)
-[![License](https://img.shields.io/github/license/anyms/MathJS.svg)](https://github.com/anyms/MathJS/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/anyms/mathjs.svg)](https://github.com/anyms/MathJS/blob/master/LICENSE)
+[![Version](https://img.shields.io/github/release/anyms/mathjs.svg)](https://github.com/anyms/MathJS/blob/master/LICENSE)
 
 # MathJS
 
