@@ -1,7 +1,0 @@
-requests
-termcolor
-importlib
-prettytable
-bs4
-colorama
-tabulate
