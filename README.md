@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/anyms/MathJS.svg?branch=master)](https://travis-ci.org/anyms/MathJS)
+[![License](https://img.shields.io/github/license/anyms/MathJS.svg)](https://github.com/anyms/MathJS/blob/master/LICENSE)
+
 # MathJS
 
 A simple math library to solve precision problem
