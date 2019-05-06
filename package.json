@@ -1,0 +1,31 @@
+{
+  "name": "mathjs",
+  "version": "1.0.1",
+  "description": "A JavaScript library to solve precision problem",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anyms/MathJS.git"
+  },
+  "keywords": [
+    "Math",
+    "MathJS"
+  ],
+  "author": "Jeeva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anyms/MathJS/issues"
+  },
+  "homepage": "https://github.com/anyms/MathJS#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "gulp-babel": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2"
+  }
+}

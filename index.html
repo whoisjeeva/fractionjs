@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MathJS</title>
+    </head>
+    <body>
+        
+        <script src="dist/math.min.js"></script>
+
+        <script>
+
+            let math = new MathJS(0.1);
+            math.add(0.1);
+            math.add(0.1);
+            math.multiply(MathJS.PI);
+            console.log("value: " + math.value);
+
+            console.log(MathJS);
+        </script>
+    </body>
+</html>
