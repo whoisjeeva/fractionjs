@@ -7,13 +7,7 @@ const rename      = require("gulp-rename");
 const sourcemaps  = require('gulp-sourcemaps')
 
 
-gulp.task("hello", (done) => {
-    console.log("hello, world!");
-    done();
-});
-
-
-gulp.task("compile", () => {
+gulp.task("compile", function() {
     return gulp.src(["./math.js"])
         .pipe(sourcemaps.init())
         .pipe(babel())
@@ -23,6 +17,8 @@ gulp.task("compile", () => {
         .pipe(gulp.dest("dist"));
 });
 
+
+gulp.task("default", gulp.series("compile"));
 
 gulp.task("watch", gulp.series("compile", function() {
     gulp.watch(["./math.js"], gulp.series(["compile"]));
