@@ -8,13 +8,12 @@
         <script src="dist/math.min.js"></script>
 
         <script>
+            let currency = mathjs(0.1)
+                .add(0.1)
+                .add(0.1)
+                .divide(MathJS.PI);
 
-            let math = mathjs(0.1)
-                .add(0.1)
-                .add(0.1)
-                .divide(2)
-                .add(0.1);
-            console.log("value: " + math.value);
+            console.log(`value: ${currency}`);
         </script>
     </body>
 </html>

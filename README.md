@@ -25,3 +25,20 @@ math.add(0.1);
 
 console.log(math.value); // 0.3
 ```
+
+There is a method also available to create `MathJS` object, which will create and return a new `MathJS` object.
+
+```js
+let currency = mathjs(0.1);
+```
+
+You can also chain methods. The `toString` method returns the value from `MathJS` object, so if you are explicitly or implicitly converting `MathJS` object to a string that will return the value.
+
+```js
+let currency = mathjs(0.1)
+    .add(0.1)
+    .add(0.1)
+    .divide(MathJS.PI);
+
+console.log(`value: ${currency}`);
+```

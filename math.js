@@ -10,6 +10,10 @@ class MathJS {
         }
     }
 
+    toString() {
+        return this.value;
+    }
+
     abs() { this.value = Math.abs(this.value); }
     acos() { this.value = Math.acos(this.value); }
     asin() { this.value = Math.asin(this.value); }
