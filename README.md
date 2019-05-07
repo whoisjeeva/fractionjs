@@ -8,10 +8,16 @@ A simple math library to solve precision problem
 
 # Getting Started
 
-Include `Fraction` in your project:
+Include `Fraction` in your project
 
 ```html
 <script src="dist/fraction.min.js"></script>
+```
+
+Or in a NodeJS enviroment [fracjs](https://www.npmjs.com/package/fracjs)
+
+```sh
+npm i fracjs
 ```
 
 # Usage
