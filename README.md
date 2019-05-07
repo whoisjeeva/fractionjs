@@ -22,6 +22,12 @@ npm i fracjs
 
 # Usage
 
+In a NodeJS enviroment, you have to require the `Fraction` class or `fraction` method.
+
+```js
+const fraction = require("fracjs").fraction;
+```
+
 Create the `Fraction` object with a starting value, it can be a `string` version of number. Then you can call any `Fraction` methods on created math object, it will modify the value in place
 
 ```js
