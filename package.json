@@ -1,6 +1,6 @@
 {
-  "name": "@anyms/fractionjs",
-  "version": "1.0.2",
+  "name": "fracjs",
+  "version": "1.0.5",
   "description": "A JavaScript library to solve precision problem",
   "main": "fraction.js",
   "scripts": {
