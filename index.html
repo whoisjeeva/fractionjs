@@ -9,13 +9,12 @@
 
         <script>
 
-            let math = new MathJS(0.1);
-            math.add(0.1);
-            math.add(0.1);
-            math.multiply(MathJS.PI);
+            let math = mathjs(0.1)
+                .add(0.1)
+                .add(0.1)
+                .divide(2)
+                .add(0.1);
             console.log("value: " + math.value);
-
-            console.log(MathJS);
         </script>
     </body>
 </html>

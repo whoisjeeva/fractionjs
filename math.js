@@ -79,6 +79,7 @@ class MathJS {
         this.value = String(
             (algebraic.num1 + algebraic.num2) / algebraic.base
         );
+        return this;
     }
 
     // divide value
@@ -86,6 +87,7 @@ class MathJS {
         this.checkNumber(num);
         let algebraic = this.toAlgebraic(this.value, num);
         this.value = String(algebraic.num1 / algebraic.num2);
+        return this;
     }
 
     // divide the value and return reminder
@@ -94,6 +96,7 @@ class MathJS {
         let algebraic = this.toAlgebraic(this.value, num);
         this.divide(num);
         return String((algebraic.num1 % algebraic.num2) / algebraic.base);
+        return this;
     }
 
 
@@ -104,6 +107,7 @@ class MathJS {
 
         this.checkNumber(x);
         this.value = String(Number(this.value).toPrecision(x));
+        return this;
     }
 
     round(decPos) {
@@ -114,24 +118,33 @@ class MathJS {
             this.value = Math.round(this.value * Math.pow(10, decPos)) / Math.pow(10, decPos);
         }
         this.value = String(this.value);
+        return this;
     }
 
     reminder(num) {
         let algebraic = this.toAlgebraic(this.value, num);
         this.value = String((algebraic.num1 % algebraic.num2) / algebraic.base);
+        return this;
     }
 
     subtract(num) {
         this.checkNumber(num);
         let algebraic = this.toAlgebraic(this.value, num);
         this.value = String((algebraic.num1 - algebraic.num2) / algebraic.base);
+        return this;
     };
       
     multiply(num) {
         this.checkNumber(num);
         let alg = this.toAlgebraic(this.value, num);
         this.value = String((alg.num1 * alg.num2) / (alg.base * alg.base));
+        return this;
     };
 }
 
 Object.setPrototypeOf(MathJS, Math);
+
+
+function mathjs(num) {
+    return new MathJS(num);
+}
