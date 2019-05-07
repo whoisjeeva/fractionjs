@@ -1,25 +1,26 @@
 {
-  "name": "mathjs",
-  "version": "1.0.1",
+  "name": "@anyms/fractionjs",
+  "version": "1.0.2",
   "description": "A JavaScript library to solve precision problem",
-  "main": "index.js",
+  "main": "fraction.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anyms/MathJS.git"
+    "url": "git+https://github.com/anyms/fractionjs.git"
   },
   "keywords": [
-    "Math",
-    "MathJS"
+    "math",
+    "fractionjs",
+    "fraction"
   ],
   "author": "Jeeva",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/anyms/MathJS/issues"
+    "url": "https://github.com/anyms/fractionjs/issues"
   },
-  "homepage": "https://github.com/anyms/MathJS#readme",
+  "homepage": "https://github.com/anyms/fractionjs#readme",
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",

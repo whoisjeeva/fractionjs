@@ -1,4 +1,4 @@
-class MathJS {
+class Fraction {
     constructor(num) {
         this.checkNumber(num);
         this.value = num.toString();
@@ -10,24 +10,82 @@ class MathJS {
         }
     }
 
-    toString() {
-        return this.value;
-    }
+    toString() { return this.value.toString(); }
+    toInt() { return parseInt(this.value); }
+    toFloat() { return parseFloat(this.value); }
+    toNumber() { return Number(this.value); }
+    int() { this.value = parseInt(this.value); }
+    float() { this.value = parseFloat(this.value); }
+    number() { this.value = Number(this.value); }
 
+    // Returns the absolute value of a number.
     abs() { this.value = Math.abs(this.value); }
+    // Returns the arccosine of a number.
     acos() { this.value = Math.acos(this.value); }
+    // Returns the hyperbolic arccosine of a number.
+    acosh() { this.value = Math.acosh(this.value); }
+    // Returns the arcsine of a number.
     asin() { this.value = Math.asin(this.value); }
+    // Returns the hyperbolic arcsine of a number.
+    asinh() { this.value = Math.asinh(this.value); }
+    // Returns the arctangent of a number.
     atan() { this.value = Math.atan(this.value); }
-    atan2(num2) { this.value = Math.atan2(this.value, num2); }
+    // Returns the hyperbolic arctangent of a number.
+    atanh() { this.value = Math.atanh(this.value); }
+    // Returns the arctangent of the quotient of its arguments.
+    atan2(num) { this.value = Math.atan2(this.value, num); }
+    // Returns the cube root of a number.
+    cbrt() { this.value = Math.cbrt(this.value); }
+    // Returns the smallest integer greater than or equal to a number.
     ceil() { this.value = Math.ceil(this.value); }
+    // Returns the number of leading zeroes of a 32-bit integer.
+    clz32() { this.value = Math.clz32(this.value); }
+    // Returns the cosine of a number.
     cos() { this.value = Math.cos(this.value); }
+    // Returns the hyperbolic cosine of a number.
+    cosh() { this.value = Math.cosh(this.value); }
+    // Returns Ex, where x is the argument, and E is Euler's constant (2.718...), the base of the natural logarithm.
     exp() { this.value = Math.exp(this.value); }
+    // Returns subtracting 1 from exp(x).
+    expm1() { this.value = Math.expm1(this.value); }
+    // Returns the largest integer less than or equal to a number.
     floor() { this.value = Math.floor(this.value); }
+    // Returns the nearest single precision float representation of a number.
+    fround() { this.value = Math.fround(this.value); }
+    // Returns the square root of the sum of squares of its arguments.
+    hypot() {
+        let args = [this.value];
+        for (let i = 0; i < arguments.length; i++) {
+            args.push(arguments[i]);
+        }
+        this.value = Math.hypot(...args); 
+    }
+    // Returns the result of a 32-bit integer multiplication.
+    imul(num) { this.value = Math.imul(this.value, num); }
+    // Returns the natural logarithm (loge, also ln) of a number.
     log() { this.value = Math.log(this.value); }
+    // Returns the natural logarithm (loge, also ln) of 1 + x for a number x.
+    log1p() { this.value = Math.log1p(this.value); }
+    // Returns the base 10 logarithm of a number.
+    log10() { this.value = Math.log10(this.value); }
+    // Returns the base 2 logarithm of a number.
+    log2() { this.value = Math.log2(this.value); }
+    // Returns base to the exponent power, that is, base exponent.
     pow(exponent) { this.value = Math.pow(this.value, exponent); }
+    // Returns the sign of the x, indicating whether x is positive, negative or zero.
+    sign() { this.value = Math.sign(this.value); }
+    // Returns the sine of a number.
     sin() { this.value = Math.sin(this.value); }
+    // Returns the hyperbolic sine of a number.
+    sinh() { this.value = Math.sinh(this.value); }
+    // Returns the positive square root of a number.
     sqrt() { this.value = Math.sqrt(this.value); }
+    // Returns the tangent of a number.
     tan() { this.value = Math.tan(this.value); }
+    // Returns the hyperbolic tangent of a number.
+    tanh() { this.value = Math.tanh(this.value); }
+    // Returns the integer part of the number x, removing any fractional digits.
+    trunc() { this.value = Math.trunc(this.value); }
 
     /*
     Following method handles the `algebraic fractions` which allows to do integer calculation on floating points
@@ -119,7 +177,7 @@ class MathJS {
         if (decPos === undefined) {
             this.value = Math.round(this.value);
         } else {
-            this.value = Math.round(this.value * Math.pow(10, decPos)) / Math.pow(10, decPos);
+            this.value = Math.round(this.toFloat() * Math.pow(10, decPos)) / Math.pow(10, decPos);
         }
         this.value = String(this.value);
         return this;
@@ -144,11 +202,30 @@ class MathJS {
         this.value = String((alg.num1 * alg.num2) / (alg.base * alg.base));
         return this;
     };
+
+    static random(min, max) {
+        if (isNaN(min) && isNaN(max)) {
+            return Math.random();
+        }
+        
+        if (isNaN(max)) {
+            max = parseInt(min);
+            min = 0;
+        } else {
+            min = parseInt(min);
+            max = parseInt(max);
+        }
+
+        if (min > max) {
+            throw `Error: min value can not be greater than max value`;
+        }
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 }
 
-Object.setPrototypeOf(MathJS, Math);
+Object.setPrototypeOf(Fraction, Math);
 
 
-function mathjs(num) {
-    return new MathJS(num);
+function fraction(num) {
+    return new Fraction(num);
 }

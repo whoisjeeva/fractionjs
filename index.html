@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>MathJS</title>
+        <title>FractionJS</title>
     </head>
     <body>
         
-        <script src="dist/math.min.js"></script>
+        <script src="dist/fraction.min.js"></script>
 
         <script>
-            let currency = mathjs(0.1)
+            let currency = fraction(0.1)
                 .add(0.1)
                 .add(0.1)
-                .divide(MathJS.PI);
+                .divide(Fraction.PI);
+            currency.add(2);
 
-            console.log(`value: ${currency}`);
+            console.log(`Value: ${currency}`);
+            console.log(`Number: ${currency.toNumber()}`);
+            console.log(`Round: ${currency.round(1)}`);
+
+            console.log(currency.toAlgebraic(1.1, 2));
         </script>
     </body>
 </html>

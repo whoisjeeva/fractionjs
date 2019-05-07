@@ -8,11 +8,11 @@ const sourcemaps  = require('gulp-sourcemaps')
 
 
 gulp.task("compile", function() {
-    return gulp.src(["./math.js"])
+    return gulp.src(["./fraction.js"])
         .pipe(sourcemaps.init())
         .pipe(babel())
         .pipe(uglify())
-        .pipe(rename("math.min.js"))
+        .pipe(rename("fraction.min.js"))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest("dist"));
 });
@@ -21,5 +21,5 @@ gulp.task("compile", function() {
 gulp.task("default", gulp.series("compile"));
 
 gulp.task("watch", gulp.series("compile", function() {
-    gulp.watch(["./math.js"], gulp.series(["compile"]));
+    gulp.watch(["./fraction.js"], gulp.series(["compile"]));
 }));
