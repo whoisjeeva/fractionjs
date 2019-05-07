@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/anyms/fractionjs.svg?branch=master)](https://travis-ci.org/anyms/Fraction)
+[![Build Status](https://travis-ci.org/anyms/fractionjs.svg?branch=master)](https://travis-ci.org/anyms/fractionjs)
 [![License](https://img.shields.io/github/license/anyms/fractionjs.svg)](https://github.com/anyms/Fraction/blob/master/LICENSE)
 [![Version](https://img.shields.io/github/release/anyms/fractionjs.svg)](https://github.com/anyms/Fraction/releases/latest)
 
